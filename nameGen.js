@@ -12,17 +12,16 @@ function studentGen () {
     var name = faker.name.findName();
     var year = getRandomIntInclusive(1, 7);
     var house = getRandomIntInclusive(1, 4);
-    students.push(name + ", " + year + ", " + house);
+    console.log('(\'' + name + '\', ' + year + ', ' + house + '),');
   }
 }
 
 function parentGen () {
   for (i = 0; i < 127; i++) {
     var name = faker.name.findName();
-    parents.push('(' + name + ')');
+    parents.push(name);
   }
 }
 
 parentGen();
 studentGen();
-console.log(parents);
