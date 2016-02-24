@@ -23,5 +23,12 @@ function parentGen () {
   }
 }
 
-parentGen();
-studentGen();
+function relGen () {
+  for (i = 1; i <= 280; i++) {
+    var studentId = i;
+    var parentId  = getRandomIntInclusive(1, 127);
+    console.log('(' + studentId + ', ' + parentId + '),');
+  }
+}
+
+relGen();
