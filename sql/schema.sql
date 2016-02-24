@@ -20,6 +20,7 @@ create table students (
 
 create table teachers (
   id serial primary key,
+  name varchar(50),
   house_id integer references houses(id)
 );
 
@@ -35,7 +36,7 @@ create table par_child_rels (
   parent_id integer references students(id)
 )
 
-create table rosters (
+create table class_rosters (
   id serial primary key,
   student_id integer references students(id),
   class_id integer references classes(id)
