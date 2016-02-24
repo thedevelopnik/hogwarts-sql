@@ -1,5 +1,6 @@
 var faker = require('faker');
 
+var parents = [];
 var students = [];
 
 function getRandomIntInclusive(min, max) {
@@ -16,10 +17,12 @@ function studentGen () {
 }
 
 function parentGen () {
-  for (i = 0; i < 120; i++) {
+  for (i = 0; i < 127; i++) {
     var name = faker.name.findName();
+    parents.push('(' + name + ')');
   }
 }
 
+parentGen();
 studentGen();
-console.log(students);
+console.log(parents);
