@@ -15,5 +15,11 @@ function studentGen () {
   }
 }
 
+function parentGen () {
+  for (i = 0; i < 120; i++) {
+    var name = faker.name.findName();
+  }
+}
+
 studentGen();
 console.log(students);
