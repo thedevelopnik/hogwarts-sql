@@ -33,11 +33,12 @@ create table classes (
 create table par_child_rels (
   id serial primary key,
   student_id integer references students(id),
-  parent_id integer references students(id)
+  parent1_id integer references parents(id),
+  parent2_id integer references parents(id)
 )
 
 create table class_rosters (
-  id serial primary key,
+  class_id integer references classes(id),
   student_id integer references students(id),
-  class_id integer references classes(id)
+  student_year integer references students(year)
 )

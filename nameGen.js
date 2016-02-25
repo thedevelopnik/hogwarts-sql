@@ -26,8 +26,9 @@ function parentGen () {
 function relGen () {
   for (i = 1; i <= 280; i++) {
     var studentId = i;
-    var parentId  = getRandomIntInclusive(1, 127);
-    console.log('(' + studentId + ', ' + parentId + '),');
+    var parent1Id  = getRandomIntInclusive(1, 127);
+    var parent2Id  = getRandomIntInclusive(1, 127);
+    console.log('(' + studentId + ', ' + parent1Id + ', ' + parent2Id + '),');
   }
 }
 

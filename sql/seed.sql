@@ -1,6 +1,7 @@
-insert into houses (name) values ('Hufflepuff'), ('Gryffindor'), ('Ravenclaw'), ('Slytherin')
+insert into houses (name) values ('Hufflepuff'), ('Gryffindor'), ('Ravenclaw'), ('Slytherin');
 
-insert into teachers (name, house_id) values ('Severus Snape', 4),
+insert into teachers (name, house_id) values
+  ('Severus Snape', 4),
   ('Minerva McGonagall', 2),
   ('Filius Flitwick', 3),
   ('Pomona Sprout', 1),
@@ -9,6 +10,7 @@ insert into teachers (name, house_id) values ('Severus Snape', 4),
   ('Rolanda Hooch', null),
   ('Charity Burbage', null),
   ('Cuthbert Binns', null);
+  ('Albus Dumbledore', null)
 
 insert into classes (subject, teacher_id) values
   ('Potions',
@@ -28,7 +30,9 @@ insert into classes (subject, teacher_id) values
   ('Muggle Studies',
     (select id from teachers where name='Charity Burbage')),
   ('History of Magic',
-    (select id from teachers where name='Cuthbert Binns'));
+    (select id from teachers where name='Cuthbert Binns')),
+  ('Headmaster',
+    (select id from teachers where name='Albus Dumbledore'));
 
 insert into parents (name) values
   ('Brendan Sporer'),
@@ -442,283 +446,472 @@ insert into students (name, year, house_id) values
   ('Landen Zulauf', 6, 3);
 
 insert into par_child_rels values
-  (1, 45),
-  (2, 5),
-  (3, 67),
-  (4, 105),
-  (5, 26),
-  (6, 116),
-  (7, 55),
-  (8, 112),
-  (9, 57),
-  (10, 23),
-  (11, 101),
-  (12, 66),
-  (13, 40),
-  (14, 47),
-  (15, 64),
-  (16, 106),
-  (17, 106),
-  (18, 67),
-  (19, 37),
-  (20, 95),
-  (21, 43),
-  (22, 80),
-  (23, 105),
-  (24, 40),
-  (25, 31),
-  (26, 21),
-  (27, 112),
-  (28, 99),
-  (29, 26),
-  (30, 98),
-  (31, 113),
-  (32, 118),
-  (33, 22),
-  (34, 43),
-  (35, 84),
-  (36, 37),
-  (37, 88),
-  (38, 3),
-  (39, 120),
-  (40, 127),
-  (41, 62),
-  (42, 43),
-  (43, 109),
-  (44, 39),
-  (45, 56),
-  (46, 67),
-  (47, 15),
-  (48, 92),
-  (49, 123),
-  (50, 109),
-  (51, 7),
-  (52, 114),
-  (53, 122),
-  (54, 89),
-  (55, 97),
-  (56, 118),
-  (57, 45),
-  (58, 16),
-  (59, 70),
-  (60, 53),
-  (61, 71),
-  (62, 78),
-  (63, 6),
-  (64, 115),
-  (65, 23),
-  (66, 96),
-  (67, 10),
-  (68, 79),
-  (69, 41),
-  (70, 34),
-  (71, 44),
-  (72, 13),
-  (73, 69),
-  (74, 56),
-  (75, 92),
-  (76, 8),
-  (77, 64),
-  (78, 41),
-  (79, 97),
-  (80, 68),
-  (81, 41),
-  (82, 77),
-  (83, 104),
-  (84, 11),
-  (85, 1),
-  (86, 79),
-  (87, 50),
-  (88, 32),
-  (89, 92),
-  (90, 47),
-  (91, 5),
-  (92, 10),
-  (93, 28),
-  (94, 19),
-  (95, 75),
-  (96, 60),
-  (97, 56),
-  (98, 29),
-  (99, 64),
-  (100, 75),
-  (101, 127),
-  (102, 68),
-  (103, 63),
-  (104, 72),
-  (105, 126),
-  (106, 16),
-  (107, 93),
-  (108, 61),
-  (109, 20),
-  (110, 108),
-  (111, 88),
-  (112, 114),
-  (113, 76),
-  (114, 114),
-  (115, 103),
-  (116, 97),
-  (117, 105),
-  (118, 18),
-  (119, 102),
-  (120, 95),
-  (121, 123),
-  (122, 113),
-  (123, 24),
-  (124, 102),
-  (125, 79),
-  (126, 58),
-  (127, 25),
-  (128, 48),
-  (129, 36),
-  (130, 102),
-  (131, 80),
-  (132, 124),
-  (133, 30),
-  (134, 62),
-  (135, 39),
-  (136, 1),
-  (137, 91),
-  (138, 53),
-  (139, 3),
-  (140, 72),
-  (141, 6),
-  (142, 57),
-  (143, 54),
-  (144, 34),
-  (145, 15),
-  (146, 73),
-  (147, 65),
-  (148, 64),
-  (149, 29),
-  (150, 64),
-  (151, 101),
-  (152, 25),
-  (153, 53),
-  (154, 92),
-  (155, 45),
-  (156, 118),
-  (157, 54),
-  (158, 70),
-  (159, 105),
-  (160, 10),
-  (161, 14),
-  (162, 35),
-  (163, 8),
-  (164, 76),
-  (165, 125),
-  (166, 71),
-  (167, 95),
-  (168, 116),
-  (169, 20),
-  (170, 7),
-  (171, 44),
-  (172, 122),
-  (173, 18),
-  (174, 71),
-  (175, 94),
-  (176, 69),
-  (177, 35),
-  (178, 27),
-  (179, 127),
-  (180, 124),
-  (181, 46),
-  (182, 63),
-  (183, 126),
-  (184, 86),
-  (185, 43),
-  (186, 115),
-  (187, 83),
-  (188, 90),
-  (189, 18),
-  (190, 35),
-  (191, 71),
-  (192, 104),
-  (193, 56),
-  (194, 27),
-  (195, 102),
-  (196, 125),
-  (197, 61),
-  (198, 19),
-  (199, 100),
-  (200, 94),
-  (201, 124),
-  (202, 28),
-  (203, 41),
-  (204, 65),
-  (205, 111),
-  (206, 50),
-  (207, 28),
-  (208, 110),
-  (209, 115),
-  (210, 4),
-  (211, 85),
-  (212, 122),
-  (213, 105),
-  (214, 67),
-  (215, 68),
-  (216, 9),
-  (217, 73),
-  (218, 121),
-  (219, 62),
-  (220, 40),
-  (221, 82),
-  (222, 77),
-  (223, 24),
-  (224, 59),
-  (225, 33),
-  (226, 56),
-  (227, 108),
-  (228, 20),
-  (229, 65),
-  (230, 46),
-  (231, 20),
-  (232, 125),
-  (233, 27),
-  (234, 54),
-  (235, 116),
-  (236, 44),
-  (237, 89),
-  (238, 75),
-  (239, 22),
-  (240, 31),
-  (241, 24),
-  (242, 120),
-  (243, 99),
-  (244, 118),
-  (245, 65),
-  (246, 56),
-  (247, 71),
-  (248, 36),
-  (249, 99),
-  (250, 50),
-  (251, 32),
-  (252, 88),
-  (253, 103),
-  (254, 11),
-  (255, 58),
-  (256, 110),
-  (257, 110),
-  (258, 106),
-  (259, 55),
-  (260, 118),
-  (261, 16),
-  (262, 109),
-  (263, 93),
-  (264, 6),
-  (265, 80),
-  (266, 19),
-  (267, 28),
-  (268, 48),
-  (269, 5),
-  (270, 80),
-  (271, 76),
-  (272, 119),
-  (273, 110),
-  (274, 74),
-  (275, 9),
-  (276, 92),
-  (277, 31),
-  (278, 42),
-  (279, 41),
-  (280, 26);
+  (1, 35, 63),
+  (2, 106, 68),
+  (3, 91, 92),
+  (4, 92, 29),
+  (5, 104, 54),
+  (6, 45, 41),
+  (7, 52, 28),
+  (8, 100, 71),
+  (9, 19, 80),
+  (10, 38, 85),
+  (11, 63, 71),
+  (12, 104, 27),
+  (13, 46, 73),
+  (14, 76, 41),
+  (15, 119, 37),
+  (16, 20, 25),
+  (17, 103, 71),
+  (18, 103, 93),
+  (19, 32, 96),
+  (20, 29, 116),
+  (21, 99, 93),
+  (22, 27, 100),
+  (23, 100, 12),
+  (24, 86, 69),
+  (25, 76, 107),
+  (26, 65, 6),
+  (27, 102, 80),
+  (28, 89, 42),
+  (29, 1, 69),
+  (30, 78, 29),
+  (31, 72, 98),
+  (32, 98, 29),
+  (33, 38, 39),
+  (34, 109, 92),
+  (35, 6, 70),
+  (36, 83, 13),
+  (37, 70, 56),
+  (38, 105, 51),
+  (39, 107, 98),
+  (40, 108, 53),
+  (41, 81, 94),
+  (42, 114, 44),
+  (43, 37, 4),
+  (44, 119, 24),
+  (45, 16, 42),
+  (46, 73, 24),
+  (47, 42, 8),
+  (48, 84, 80),
+  (49, 93, 41),
+  (50, 77, 47),
+  (51, 111, 28),
+  (52, 17, 108),
+  (53, 51, 93),
+  (54, 59, 88),
+  (55, 69, 106),
+  (56, 83, 85),
+  (57, 5, 33),
+  (58, 102, 18),
+  (59, 32, 50),
+  (60, 121, 26),
+  (61, 57, 49),
+  (62, 105, 6),
+  (63, 9, 9),
+  (64, 54, 90),
+  (65, 47, 60),
+  (66, 37, 124),
+  (67, 73, 19),
+  (68, 87, 104),
+  (69, 41, 19),
+  (70, 126, 12),
+  (71, 107, 33),
+  (72, 30, 110),
+  (73, 88, 78),
+  (74, 117, 95),
+  (75, 93, 35),
+  (76, 32, 123),
+  (77, 42, 26),
+  (78, 6, 18),
+  (79, 40, 59),
+  (80, 36, 82),
+  (81, 11, 124),
+  (82, 116, 26),
+  (83, 100, 114),
+  (84, 71, 97),
+  (85, 107, 97),
+  (86, 1, 35),
+  (87, 95, 45),
+  (88, 117, 89),
+  (89, 102, 114),
+  (90, 75, 27),
+  (91, 40, 119),
+  (92, 17, 79),
+  (93, 36, 35),
+  (94, 81, 51),
+  (95, 29, 70),
+  (96, 101, 110),
+  (97, 25, 50),
+  (98, 92, 105),
+  (99, 7, 3),
+  (100, 17, 68),
+  (101, 22, 39),
+  (102, 25, 20),
+  (103, 4, 111),
+  (104, 80, 45),
+  (105, 87, 14),
+  (106, 48, 76),
+  (107, 41, 68),
+  (108, 104, 2),
+  (109, 44, 111),
+  (110, 41, 6),
+  (111, 55, 114),
+  (112, 94, 31),
+  (113, 52, 33),
+  (114, 9, 15),
+  (115, 83, 18),
+  (116, 117, 35),
+  (117, 22, 123),
+  (118, 111, 92),
+  (119, 95, 34),
+  (120, 18, 76),
+  (121, 116, 2),
+  (122, 62, 13),
+  (123, 67, 75),
+  (124, 99, 100),
+  (125, 115, 36),
+  (126, 87, 84),
+  (127, 45, 120),
+  (128, 99, 92),
+  (129, 93, 116),
+  (130, 53, 2),
+  (131, 37, 77),
+  (132, 5, 66),
+  (133, 3, 61),
+  (134, 126, 102),
+  (135, 85, 19),
+  (136, 118, 84),
+  (137, 54, 112),
+  (138, 15, 97),
+  (139, 126, 65),
+  (140, 75, 16),
+  (141, 48, 106),
+  (142, 30, 76),
+  (143, 36, 46),
+  (144, 53, 100),
+  (145, 81, 39),
+  (146, 52, 50),
+  (147, 87, 14),
+  (148, 4, 76),
+  (149, 105, 79),
+  (150, 2, 112),
+  (151, 102, 68),
+  (152, 35, 43),
+  (153, 67, 63),
+  (154, 51, 11),
+  (155, 53, 19),
+  (156, 122, 81),
+  (157, 112, 84),
+  (158, 56, 121),
+  (159, 22, 48),
+  (160, 30, 127),
+  (161, 127, 110),
+  (162, 5, 16),
+  (163, 76, 119),
+  (164, 67, 64),
+  (165, 9, 112),
+  (166, 51, 96),
+  (167, 80, 97),
+  (168, 14, 92),
+  (169, 112, 66),
+  (170, 14, 108),
+  (171, 67, 40),
+  (172, 50, 54),
+  (173, 75, 113),
+  (174, 29, 51),
+  (175, 32, 37),
+  (176, 52, 10),
+  (177, 71, 104),
+  (178, 21, 108),
+  (179, 20, 64),
+  (180, 92, 53),
+  (181, 44, 75),
+  (182, 4, 57),
+  (183, 18, 76),
+  (184, 6, 87),
+  (185, 19, 88),
+  (186, 4, 21),
+  (187, 60, 17),
+  (188, 43, 98),
+  (189, 68, 68),
+  (190, 15, 120),
+  (191, 11, 37),
+  (192, 40, 57),
+  (193, 7, 73),
+  (194, 25, 80),
+  (195, 50, 83),
+  (196, 28, 45),
+  (197, 41, 85),
+  (198, 112, 121),
+  (199, 118, 26),
+  (200, 112, 110),
+  (201, 79, 117),
+  (202, 118, 42),
+  (203, 60, 62),
+  (204, 126, 49),
+  (205, 54, 35),
+  (206, 61, 49),
+  (207, 90, 18),
+  (208, 93, 122),
+  (209, 58, 66),
+  (210, 87, 125),
+  (211, 117, 120),
+  (212, 125, 88),
+  (213, 67, 41),
+  (214, 61, 49),
+  (215, 21, 75),
+  (216, 45, 97),
+  (217, 19, 17),
+  (218, 83, 50),
+  (219, 52, 9),
+  (220, 121, 50),
+  (221, 47, 51),
+  (222, 14, 53),
+  (223, 76, 74),
+  (224, 1, 110),
+  (225, 114, 109),
+  (226, 109, 121),
+  (227, 17, 77),
+  (228, 74, 21),
+  (229, 127, 92),
+  (230, 67, 39),
+  (231, 12, 92),
+  (232, 6, 53),
+  (233, 69, 127),
+  (234, 3, 75),
+  (235, 90, 53),
+  (236, 61, 122),
+  (237, 34, 126),
+  (238, 14, 47),
+  (239, 8, 26),
+  (240, 15, 63),
+  (241, 48, 10),
+  (242, 7, 102),
+  (243, 5, 17),
+  (244, 15, 124),
+  (245, 50, 93),
+  (246, 35, 26),
+  (247, 64, 18),
+  (248, 116, 8),
+  (249, 76, 91),
+  (250, 16, 73),
+  (251, 57, 49),
+  (252, 31, 17),
+  (253, 114, 4),
+  (254, 4, 12),
+  (255, 79, 81),
+  (256, 35, 117),
+  (257, 122, 29),
+  (258, 53, 120),
+  (259, 116, 87),
+  (260, 60, 68),
+  (261, 13, 67),
+  (262, 90, 42),
+  (263, 77, 74),
+  (264, 60, 21),
+  (265, 23, 81),
+  (266, 3, 72),
+  (267, 72, 102),
+  (268, 82, 32),
+  (269, 86, 87),
+  (270, 124, 37),
+  (271, 57, 15),
+  (272, 61, 81),
+  (273, 70, 115),
+  (274, 13, 42),
+  (275, 28, 71),
+  (276, 60, 43),
+  (277, 50, 77),
+  (278, 82, 124),
+  (279, 21, 105),
+  (280, 85, 104);
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=1 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=1 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=1 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=1 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=1 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=1 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=1 and students.year=7;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=2 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=2 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=2 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=2 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=2 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=2 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=2 and students.year=7;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=3 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=3 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=3 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=3 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=3 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=3 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=3 and students.year=7;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=4 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=4 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=4 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=4 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=4 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=4 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=4 and students.year=7;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=5 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=5 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=5 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=5 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=5 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=5 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=5 and students.year=7;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=6 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=6 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=6 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=6 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=6 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=6 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=6 and students.year=7;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=7 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=7 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=7 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=7 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=7 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=7 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=7 and students.year=7;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=8 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=8 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=8 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=8 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=8 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=8 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=8 and students.year=7;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=9 and students.year=1;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=9 and students.year=2;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=9 and students.year=3;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=9 and students.year=4;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=9 and students.year=5;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=9 and students.year=6;
+
+insert into class_rosters (class_id, student_id, student_year)
+  select classes.id, students.id, students.year where classes.id=9 and students.year=7;
